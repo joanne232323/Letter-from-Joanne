@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letter from Joanne</title>
+    <link rel="icon" href="/favicon-32x32.png" type="image/x-icon">
+   <style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f8ff;
+        font-family: Arial, sans-serif;
+        margin: 0;
+    }
+    /* 針對小於或等於 375px 寬的設備 */
+    @media (max-width: 375px) {
+        h1 {
+            font-size: 18px; /* 小屏幕適用更小的字體大小 */
+        }
+    }
+    .container, .envelope {
+        text-align: center;
+        max-width: 80%;
+        padding: 20px;
+        border: 2px solid #65858d;
+        border-radius: 10px;
+        background-color: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        animation: slideIn 1s ease-out;
+        display: none; /* 初始設置為不顯示 */
+        margin: auto; /* 加入自動外邊距以在頁面中心對齊容器 */
+    }
+    .envelope {
+        display: block; /* 信封一開始顯示 */
+        cursor: pointer; /* 添加指標手形 */
+    }
+    .envelope img {
+        max-width: 100%;
+        height: auto;
+    }
+    .heart {
+        color: #ff1493;
+        font-size: 50px;
+        animation: heartbeat 1s infinite;
+        display: none;
+    }
+    .buttons {
+        margin-top: 20px;
+    }
+    .button {
+        background-color: #65858d;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 18px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 5px;
+        animation: bounce 1s infinite;
+    }
+    p {
+        font-size: 16px; /* 更小的字體大小 */
+        color: #333;
+        animation: fadeIn 5s;
+    }
+    h1 {
+        font-size: 24px; /* 調整字體大小 */
+        color: #545454; /* 更改顏色 */
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    @keyframes heartbeat {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.2); }
+    }
+    @keyframes fadeOut {
+        from { opacity: 1; }
+        to { opacity: 0; }
+    }
+    .fade-out {
+        animation: fadeOut 2s;
+    }
+    @keyframes slideIn {
+        from { transform: translateY(100%); }
+        to { transform: translateY(0); }
+    }
+    @keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+    .popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        border: 2px solid #65858d;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        animation: fadeIn 1s;
+    }
+</style>
+</head>
+<body>
+    <div class="envelope" onclick="showLetter()">
+        <img src="envelope.png" alt="信封">
+    </div>
+    <div class="container" id="message-container">
+        <h1>Dear 浩瑞:</h1>
+        <p>首先，想跟你說聲對不起。我知道之前我的欺騙傷害了你，破壞了我們之間的信任，讓你失望。我以為欺騙能讓我逃過對自己的不堪還有你的失望，或是不願面對過去黑暗的一面，所以選擇了隱瞞，卻不知帶來更大的傷害。對不起，讓你難過與不安。</p>
+        <p>但同時，我想謝謝你，謝謝你接受我不夠好的那一面，願意給我們之間機會。我想你做這個決定也很不容易吧，得來不易我會珍惜，明白重建信任需要時間與努力，我們也還在互相了解難免摩擦，但希望能找到我們的平衡點(つ´ω`)つ。</p>
+        <p>和你在一起的每一刻都讓我感覺好不真實，很像做了一場美夢。大概也是從相處中慢慢喜歡上你，你的善良、溫柔和體貼讓我感到安心與被在意，某方面也是被你的自信或著談論某些事情閃閃發亮的眼神而吸引吧！想起一起去合歡山看日出、去海邊看日落、在開車路途上的有說有笑、咖啡廳讀書、房間看電影、牽手逛夜市、吃了好多好多冰淇淋、說著過去現在到未來、甚至短暫體驗同居的日常，這些平凡的日子裡都讓我覺得幸福快樂，也想跟你一起延續這些美好的回憶～</p>
+        <p>我也從未想過自己可以喜歡一個人到這樣的程度，放下自己的原則，學會道歉，變得更加主動⋯謝謝你讓我知道如何成為更好的人，我知道我自己有不夠好的地方，可能也是需要你包容的(╥﹏╥)。</p>
+        <p>往後的日子裡，我會誠實以對任何事情並懂得貼心、主動。無論生活中的大小事，我都期待與你分享。不管遇到任何問題，也學著溝通一起面對，讓每次交流都真誠透明、雙向互動，而不想只是「不適合」或者「你本來就是這樣的人無法改變」而失去。總之希望我們能一起好好發展、一起變得更好(♡˙︶˙♡)！</p>
+        <p>So, last stop is your decision. Do you want to be with me?</p>
+
+        <div class="buttons">
+            <button class="button" onclick="showHeart()">Yes</button>
+            <button class="button" onclick="showNoMessage()">No</button>
+        </div>
+        <div class="heart" id="heart">❤️</div>
+    </div>
+    <div class="popup" id="popup">
+        <p id="popup-message"></p>
+        <button class="button" onclick="closePopup()">Close</button>
+    </div>
+
+    <script>
+        function showLetter() {
+            var envelope = document.querySelector('.envelope');
+            var container = document.getElementById('message-container');
+            envelope.style.display = 'none';
+            container.style.display = 'block';
+        }
+
+        function showHeart() {
+        var container = document.getElementById("message-container");
+        var heart = document.getElementById("heart");
+        var popup = document.getElementById("popup");
+        var popupMessage = document.getElementById("popup-message");
+        
+        container.classList.add("fade-out");
+        setTimeout(function() {
+            container.style.display = 'none';
+            heart.style.display = 'block';
+            popupMessage.textContent = "我們將繼續這段旅程，謝謝你選擇留下❤️";
+            popup.style.display = 'block';
+        }, 2000);
+}
+
+        function showNoMessage() {
+            var container = document.getElementById("message-container");
+            var popup = document.getElementById("popup");
+            var popupMessage = document.getElementById("popup-message");
+            container.classList.add("fade-out");
+            setTimeout(function() {
+                container.style.display = 'none';
+                popupMessage.textContent = "誰管你，你還是得跟我在一起😠";
+                popup.style.display = 'block';
+            }, 2000);
+        }
+
+        function closePopup() {
+        var popup = document.getElementById("popup");
+        var envelope = document.querySelector('.envelope');
+        var container = document.getElementById("message-container");
+        var heart = document.getElementById("heart");
+
+        // 隱藏彈窗和心形圖標
+        popup.style.display = 'none';
+        heart.style.display = 'none';
+
+        // 重設信件容器和信封的顯示狀態
+        container.style.display = 'none';
+        envelope.style.display = 'block';
+    }
+    </script>
+</body>
+</html>
